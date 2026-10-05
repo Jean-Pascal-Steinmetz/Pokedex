@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="start-animation" id="startAnimation" role="status" aria-label="Pokédex wird geladen">
+    <div class="start-animation__glow start-animation__glow--left"></div>
+    <div class="start-animation__glow start-animation__glow--right"></div>
+    <div class="start-animation__spark start-animation__spark--one">✦</div>
+    <div class="start-animation__spark start-animation__spark--two">✧</div>
+    <div class="start-animation__spark start-animation__spark--three">✦</div>
+    <div class="start-animation__content">
+      <div class="start-animation__ball" aria-hidden="true"><span></span></div>
+      <div class="start-animation__title">POKÉ<span>DEX</span></div>
+      <div class="start-animation__caption">Welt der Pokémon</div>
+      <div class="start-animation__track" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <main class="seiteninhalt">
+    <h1>Pokédex</h1>
+
+    <form id="suchForm" class="suchleiste">
+      <input id="suchFeld" type="search" placeholder="Name, Nummer oder Typ suchen" aria-label="Pokémon suchen" minlength="3" required>
+      <button type="submit">Suchen</button>
+      <button type="button" id="sucheLoeschen" class="suchleiste-zurueck">Alle anzeigen</button>
+    </form>
+
+    <div id="liste"></div>
+
+    <div class="navigation">
+      <button id="zurueck">Zurück</button>
+      <span id="seitenanzeige"></span>
+      <button id="weiter">Weiter</button>
+    </div>
+  </main>
+
+  <div class="pokeball"></div>
+
+  <dialog id="detail">
+    <div class="detail-kopf" id="detailKopf">
+      <button id="schliessen">←</button>
+      <span class="detail-nr" id="detailNr"></span>
+      <h2 id="detailName"></h2>
+      <div class="typen" id="detailTypen"></div>
+      <img id="detailBild" alt="">
+      <button id="vorher" class="pfeil pfeil-links">‹</button>
+      <button id="nachher" class="pfeil pfeil-rechts">›</button>
+    </div>
+
+
+    <div class="detail-unten">
+      <div class="tabs">
+        <button id="aboutButton" class="tab aktiv">About</button>
+        <button id="statsButton" class="tab">Base Stats</button>
+      </div>
+
+      <div id="aboutInfo"></div>
+      <div id="statsInfo"></div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
